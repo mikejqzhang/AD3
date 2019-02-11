@@ -4,15 +4,15 @@
 {
     "distutils": {
         "depends": [
-            "/data/mjqzhang/AD3/ad3/Factor.h",
-            "/data/mjqzhang/AD3/ad3/FactorGraph.h",
-            "/data/mjqzhang/AD3/ad3/GenericFactor.h",
-            "/data/mjqzhang/AD3/ad3/MultiVariable.h",
             "/home/mjqzhang/miniconda3/envs/mapotofu/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h",
-            "/home/mjqzhang/miniconda3/envs/mapotofu/lib/python3.7/site-packages/numpy/core/include/numpy/ufuncobject.h"
+            "/home/mjqzhang/miniconda3/envs/mapotofu/lib/python3.7/site-packages/numpy/core/include/numpy/ufuncobject.h",
+            "ad3/Factor.h",
+            "ad3/FactorGraph.h",
+            "ad3/GenericFactor.h",
+            "ad3/MultiVariable.h"
         ],
         "include_dirs": [
-            "../src",
+            "spigot",
             "/data/mjqzhang/AD3",
             "/data/mjqzhang/AD3/python",
             "/home/mjqzhang/miniconda3/envs/mapotofu/lib/python3.7/site-packages/numpy/core/include"
@@ -21,12 +21,12 @@
         "library_dirs": [
             "/data/mjqzhang/AD3/ad3"
         ],
-        "name": "spigot_src.sparsemap",
+        "name": "spigot.sparsemap",
         "sources": [
-            "spigot_src/sparsemap.pyx"
+            "spigot/sparsemap.pyx"
         ]
     },
-    "module_name": "spigot_src.sparsemap"
+    "module_name": "spigot.sparsemap"
 }
 END: Cython Metadata */
 
@@ -649,8 +649,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__spigot_src__sparsemap
-#define __PYX_HAVE_API__spigot_src__sparsemap
+#define __PYX_HAVE__spigot__sparsemap
+#define __PYX_HAVE_API__spigot__sparsemap
 /* Early includes */
 #include "ios"
 #include "new"
@@ -897,7 +897,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "spigot_src/sparsemap.pyx",
+  "spigot/sparsemap.pyx",
   "__init__.pxd",
   "stringsource",
   "python/ad3/base.pxd",
@@ -1270,16 +1270,30 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  * cdef inline object PyArray_MultiIterNew1(a):
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
-struct __pyx_opt_args_10spigot_src_9sparsemap_sparsemap;
+struct __pyx_opt_args_6spigot_9sparsemap_sparsemap;
+struct __pyx_opt_args_6spigot_9sparsemap_spigot;
 
-/* "spigot_src/sparsemap.pyx":33
+/* "spigot/sparsemap.pyx":33
  * 
  * 
  * cpdef sparsemap(PGenericFactor f,             # <<<<<<<<<<<<<<
  *                 vector[double] unaries,
  *                 vector[double] additionals,
  */
-struct __pyx_opt_args_10spigot_src_9sparsemap_sparsemap {
+struct __pyx_opt_args_6spigot_9sparsemap_sparsemap {
+  int __pyx_n;
+  int max_iter;
+  int verbose;
+};
+
+/* "spigot/sparsemap.pyx":97
+ *     return post_unaries_np, post_additionals_np, solver_data
+ * 
+ * cpdef spigot(PGenericFactor f,             # <<<<<<<<<<<<<<
+ *                 vector[double] unaries,
+ *                 vector[double] additionals,
+ */
+struct __pyx_opt_args_6spigot_9sparsemap_spigot {
   int __pyx_n;
   int max_iter;
   int verbose;
@@ -2269,7 +2283,7 @@ static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *, char *, char *, int *); /*proto*/
 static CYTHON_INLINE int __pyx_f_5numpy_import_array(void); /*proto*/
 
-/* Module declarations from 'spigot_src.sparsemap' */
+/* Module declarations from 'spigot.sparsemap' */
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
 static PyTypeObject *__pyx_memoryview_type = 0;
@@ -2281,9 +2295,10 @@ static PyObject *contiguous = 0;
 static PyObject *indirect_contiguous = 0;
 static int __pyx_memoryview_thread_locks_used;
 static PyThread_type_lock __pyx_memoryview_thread_locks[8];
-static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *, int); /*proto*/
-static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *, int, int); /*proto*/
-static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3_4base_PGenericFactor *, std::vector<double> , std::vector<double> , int __pyx_skip_dispatch, struct __pyx_opt_args_10spigot_src_9sparsemap_sparsemap *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_6spigot_9sparsemap_asfloatvec(void *, int); /*proto*/
+static PyObject *__pyx_f_6spigot_9sparsemap_asfloatarray(void *, int, int); /*proto*/
+static PyObject *__pyx_f_6spigot_9sparsemap_sparsemap(struct __pyx_obj_3ad3_4base_PGenericFactor *, std::vector<double> , std::vector<double> , int __pyx_skip_dispatch, struct __pyx_opt_args_6spigot_9sparsemap_sparsemap *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_6spigot_9sparsemap_spigot(struct __pyx_obj_3ad3_4base_PGenericFactor *, std::vector<double> , std::vector<double> , int __pyx_skip_dispatch, struct __pyx_opt_args_6spigot_9sparsemap_spigot *__pyx_optional_args); /*proto*/
 static std::vector<double>  __pyx_convert_vector_from_py_double(PyObject *); /*proto*/
 static struct __pyx_array_obj *__pyx_array_new(PyObject *, Py_ssize_t, char *, char *, char *); /*proto*/
 static void *__pyx_align_pointer(void *, size_t); /*proto*/
@@ -2318,11 +2333,11 @@ static void __pyx_memoryview_refcount_objects_in_slice(char *, Py_ssize_t *, Py_
 static void __pyx_memoryview_slice_assign_scalar(__Pyx_memviewslice *, int, size_t, void *, int); /*proto*/
 static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *); /*proto*/
 static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, PyObject *); /*proto*/
-#define __Pyx_MODULE_NAME "spigot_src.sparsemap"
-extern int __pyx_module_is_main_spigot_src__sparsemap;
-int __pyx_module_is_main_spigot_src__sparsemap = 0;
+#define __Pyx_MODULE_NAME "spigot.sparsemap"
+extern int __pyx_module_is_main_spigot__sparsemap;
+int __pyx_module_is_main_spigot__sparsemap = 0;
 
-/* Implementation of 'spigot_src.sparsemap' */
+/* Implementation of 'spigot.sparsemap' */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_RuntimeError;
@@ -2547,7 +2562,8 @@ static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;
 static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_update;
 static PyObject *__pyx_n_s_verbose;
-static PyObject *__pyx_pf_10spigot_src_9sparsemap_sparsemap(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, int __pyx_v_max_iter, int __pyx_v_verbose); /* proto */
+static PyObject *__pyx_pf_6spigot_9sparsemap_sparsemap(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, int __pyx_v_max_iter, int __pyx_v_verbose); /* proto */
+static PyObject *__pyx_pf_6spigot_9sparsemap_2spigot(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, int __pyx_v_max_iter, int __pyx_v_verbose); /* proto */
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
@@ -2634,7 +2650,7 @@ static PyObject *__pyx_tuple__31;
 static PyObject *__pyx_codeobj__32;
 /* Late includes */
 
-/* "spigot_src/sparsemap.pyx":15
+/* "spigot/sparsemap.pyx":15
  * 
  * # MAKES A COPY but should not leak
  * cdef asfloatvec(void* vec, int n):             # <<<<<<<<<<<<<<
@@ -2642,7 +2658,7 @@ static PyObject *__pyx_codeobj__32;
  * 
  */
 
-static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *__pyx_v_vec, int __pyx_v_n) {
+static PyObject *__pyx_f_6spigot_9sparsemap_asfloatvec(void *__pyx_v_vec, int __pyx_v_n) {
   npy_intp __pyx_v_shape[1];
   PyObject *__pyx_v_arr = NULL;
   PyObject *__pyx_v_farr = NULL;
@@ -2651,7 +2667,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *__pyx_v_vec, i
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("asfloatvec", 0);
 
-  /* "spigot_src/sparsemap.pyx":18
+  /* "spigot/sparsemap.pyx":18
  *     cdef np.npy_intp shape[1]
  * 
  *     shape[0] = n             # <<<<<<<<<<<<<<
@@ -2660,7 +2676,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *__pyx_v_vec, i
  */
   (__pyx_v_shape[0]) = __pyx_v_n;
 
-  /* "spigot_src/sparsemap.pyx":19
+  /* "spigot/sparsemap.pyx":19
  * 
  *     shape[0] = n
  *     arr = np.PyArray_SimpleNewFromData(1, shape, np.NPY_DOUBLE, vec)             # <<<<<<<<<<<<<<
@@ -2672,7 +2688,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *__pyx_v_vec, i
   __pyx_v_arr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "spigot_src/sparsemap.pyx":20
+  /* "spigot/sparsemap.pyx":20
  *     shape[0] = n
  *     arr = np.PyArray_SimpleNewFromData(1, shape, np.NPY_DOUBLE, vec)
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)             # <<<<<<<<<<<<<<
@@ -2685,7 +2701,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *__pyx_v_vec, i
   __pyx_v_farr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "spigot_src/sparsemap.pyx":21
+  /* "spigot/sparsemap.pyx":21
  *     arr = np.PyArray_SimpleNewFromData(1, shape, np.NPY_DOUBLE, vec)
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)
  *     return farr             # <<<<<<<<<<<<<<
@@ -2697,7 +2713,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *__pyx_v_vec, i
   __pyx_r = __pyx_v_farr;
   goto __pyx_L0;
 
-  /* "spigot_src/sparsemap.pyx":15
+  /* "spigot/sparsemap.pyx":15
  * 
  * # MAKES A COPY but should not leak
  * cdef asfloatvec(void* vec, int n):             # <<<<<<<<<<<<<<
@@ -2708,7 +2724,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *__pyx_v_vec, i
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("spigot_src.sparsemap.asfloatvec", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("spigot.sparsemap.asfloatvec", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_arr);
@@ -2718,7 +2734,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *__pyx_v_vec, i
   return __pyx_r;
 }
 
-/* "spigot_src/sparsemap.pyx":24
+/* "spigot/sparsemap.pyx":24
  * 
  * 
  * cdef asfloatarray(void* vec, int rows, int cols):             # <<<<<<<<<<<<<<
@@ -2726,7 +2742,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatvec(void *__pyx_v_vec, i
  *     shape[0] = <np.npy_intp> rows
  */
 
-static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec, int __pyx_v_rows, int __pyx_v_cols) {
+static PyObject *__pyx_f_6spigot_9sparsemap_asfloatarray(void *__pyx_v_vec, int __pyx_v_rows, int __pyx_v_cols) {
   npy_intp __pyx_v_shape[2];
   PyObject *__pyx_v_arr = NULL;
   PyObject *__pyx_v_farr = NULL;
@@ -2735,7 +2751,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec,
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("asfloatarray", 0);
 
-  /* "spigot_src/sparsemap.pyx":26
+  /* "spigot/sparsemap.pyx":26
  * cdef asfloatarray(void* vec, int rows, int cols):
  *     cdef np.npy_intp shape[2]
  *     shape[0] = <np.npy_intp> rows             # <<<<<<<<<<<<<<
@@ -2744,7 +2760,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec,
  */
   (__pyx_v_shape[0]) = ((npy_intp)__pyx_v_rows);
 
-  /* "spigot_src/sparsemap.pyx":27
+  /* "spigot/sparsemap.pyx":27
  *     cdef np.npy_intp shape[2]
  *     shape[0] = <np.npy_intp> rows
  *     shape[1] = <np.npy_intp> cols             # <<<<<<<<<<<<<<
@@ -2753,7 +2769,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec,
  */
   (__pyx_v_shape[1]) = ((npy_intp)__pyx_v_cols);
 
-  /* "spigot_src/sparsemap.pyx":28
+  /* "spigot/sparsemap.pyx":28
  *     shape[0] = <np.npy_intp> rows
  *     shape[1] = <np.npy_intp> cols
  *     arr = np.PyArray_SimpleNewFromData(2, shape, np.NPY_DOUBLE, vec)             # <<<<<<<<<<<<<<
@@ -2765,7 +2781,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec,
   __pyx_v_arr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "spigot_src/sparsemap.pyx":29
+  /* "spigot/sparsemap.pyx":29
  *     shape[1] = <np.npy_intp> cols
  *     arr = np.PyArray_SimpleNewFromData(2, shape, np.NPY_DOUBLE, vec)
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)             # <<<<<<<<<<<<<<
@@ -2778,7 +2794,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec,
   __pyx_v_farr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "spigot_src/sparsemap.pyx":30
+  /* "spigot/sparsemap.pyx":30
  *     arr = np.PyArray_SimpleNewFromData(2, shape, np.NPY_DOUBLE, vec)
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)
  *     return farr             # <<<<<<<<<<<<<<
@@ -2790,7 +2806,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec,
   __pyx_r = __pyx_v_farr;
   goto __pyx_L0;
 
-  /* "spigot_src/sparsemap.pyx":24
+  /* "spigot/sparsemap.pyx":24
  * 
  * 
  * cdef asfloatarray(void* vec, int rows, int cols):             # <<<<<<<<<<<<<<
@@ -2801,7 +2817,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec,
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("spigot_src.sparsemap.asfloatarray", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("spigot.sparsemap.asfloatarray", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_arr);
@@ -2811,7 +2827,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec,
   return __pyx_r;
 }
 
-/* "spigot_src/sparsemap.pyx":33
+/* "spigot/sparsemap.pyx":33
  * 
  * 
  * cpdef sparsemap(PGenericFactor f,             # <<<<<<<<<<<<<<
@@ -2819,8 +2835,8 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_asfloatarray(void *__pyx_v_vec,
  *                 vector[double] additionals,
  */
 
-static PyObject *__pyx_pw_10spigot_src_9sparsemap_1sparsemap(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_10spigot_src_9sparsemap_sparsemap *__pyx_optional_args) {
+static PyObject *__pyx_pw_6spigot_9sparsemap_1sparsemap(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_f_6spigot_9sparsemap_sparsemap(struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_6spigot_9sparsemap_sparsemap *__pyx_optional_args) {
   int __pyx_v_max_iter = ((int)10);
   int __pyx_v_verbose = ((int)0);
   int __pyx_v_i;
@@ -2865,7 +2881,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
     }
   }
 
-  /* "spigot_src/sparsemap.pyx":53
+  /* "spigot/sparsemap.pyx":53
  *         GenericFactor* gf
  * 
  *     n_var = unaries.size()             # <<<<<<<<<<<<<<
@@ -2874,7 +2890,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_n_var = __pyx_v_unaries.size();
 
-  /* "spigot_src/sparsemap.pyx":56
+  /* "spigot/sparsemap.pyx":56
  * 
  *     cdef FactorGraph fg
  *     fg.SetVerbosity(verbose)             # <<<<<<<<<<<<<<
@@ -2883,7 +2899,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_fg.SetVerbosity(__pyx_v_verbose);
 
-  /* "spigot_src/sparsemap.pyx":58
+  /* "spigot/sparsemap.pyx":58
  *     fg.SetVerbosity(verbose)
  * 
  *     variables.resize(n_var)             # <<<<<<<<<<<<<<
@@ -2897,7 +2913,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
     __PYX_ERR(0, 58, __pyx_L1_error)
   }
 
-  /* "spigot_src/sparsemap.pyx":59
+  /* "spigot/sparsemap.pyx":59
  * 
  *     variables.resize(n_var)
  *     for i in range(n_var):             # <<<<<<<<<<<<<<
@@ -2909,7 +2925,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "spigot_src/sparsemap.pyx":60
+    /* "spigot/sparsemap.pyx":60
  *     variables.resize(n_var)
  *     for i in range(n_var):
  *         variables[i] = fg.CreateBinaryVariable();             # <<<<<<<<<<<<<<
@@ -2919,7 +2935,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
     (__pyx_v_variables[__pyx_v_i]) = __pyx_v_fg.CreateBinaryVariable();
   }
 
-  /* "spigot_src/sparsemap.pyx":62
+  /* "spigot/sparsemap.pyx":62
  *         variables[i] = fg.CreateBinaryVariable();
  * 
  *     fg.DeclareFactor(<Factor*> f.thisptr, variables, False)             # <<<<<<<<<<<<<<
@@ -2928,7 +2944,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_fg.DeclareFactor(((AD3::Factor *)__pyx_v_f->__pyx_base.thisptr), __pyx_v_variables, 0);
 
-  /* "spigot_src/sparsemap.pyx":64
+  /* "spigot/sparsemap.pyx":64
  *     fg.DeclareFactor(<Factor*> f.thisptr, variables, False)
  * 
  *     gf = <GenericFactor*?> f.thisptr             # <<<<<<<<<<<<<<
@@ -2937,7 +2953,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_gf = ((AD3::GenericFactor *)__pyx_v_f->__pyx_base.thisptr);
 
-  /* "spigot_src/sparsemap.pyx":65
+  /* "spigot/sparsemap.pyx":65
  * 
  *     gf = <GenericFactor*?> f.thisptr
  *     gf.SetQPMaxIter(max_iter)             # <<<<<<<<<<<<<<
@@ -2946,7 +2962,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_gf->SetQPMaxIter(__pyx_v_max_iter);
 
-  /* "spigot_src/sparsemap.pyx":66
+  /* "spigot/sparsemap.pyx":66
  *     gf = <GenericFactor*?> f.thisptr
  *     gf.SetQPMaxIter(max_iter)
  *     gf.SetClearCache(False)  # because we need the cache             # <<<<<<<<<<<<<<
@@ -2955,7 +2971,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_gf->SetClearCache(0);
 
-  /* "spigot_src/sparsemap.pyx":67
+  /* "spigot/sparsemap.pyx":67
  *     gf.SetQPMaxIter(max_iter)
  *     gf.SetClearCache(False)  # because we need the cache
  *     f.thisptr.SetAdditionalLogPotentials(additionals)             # <<<<<<<<<<<<<<
@@ -2964,7 +2980,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_f->__pyx_base.thisptr->SetAdditionalLogPotentials(__pyx_v_additionals);
 
-  /* "spigot_src/sparsemap.pyx":68
+  /* "spigot/sparsemap.pyx":68
  *     gf.SetClearCache(False)  # because we need the cache
  *     f.thisptr.SetAdditionalLogPotentials(additionals)
  *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)             # <<<<<<<<<<<<<<
@@ -2973,7 +2989,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_f->__pyx_base.thisptr->SolveQP(__pyx_v_unaries, __pyx_v_additionals, (&__pyx_v_post_unaries), (&__pyx_v_post_additionals));
 
-  /* "spigot_src/sparsemap.pyx":70
+  /* "spigot/sparsemap.pyx":70
  *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)
  * 
  *     active_set_c = gf.GetQPActiveSet()             # <<<<<<<<<<<<<<
@@ -2982,7 +2998,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_active_set_c = __pyx_v_gf->GetQPActiveSet();
 
-  /* "spigot_src/sparsemap.pyx":71
+  /* "spigot/sparsemap.pyx":71
  * 
  *     active_set_c = gf.GetQPActiveSet()
  *     distribution = gf.GetQPDistribution()             # <<<<<<<<<<<<<<
@@ -2991,7 +3007,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_distribution = __pyx_v_gf->GetQPDistribution();
 
-  /* "spigot_src/sparsemap.pyx":72
+  /* "spigot/sparsemap.pyx":72
  *     active_set_c = gf.GetQPActiveSet()
  *     distribution = gf.GetQPDistribution()
  *     inverse_A = gf.GetQPInvA()             # <<<<<<<<<<<<<<
@@ -3000,7 +3016,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_inverse_A = __pyx_v_gf->GetQPInvA();
 
-  /* "spigot_src/sparsemap.pyx":73
+  /* "spigot/sparsemap.pyx":73
  *     distribution = gf.GetQPDistribution()
  *     inverse_A = gf.GetQPInvA()
  *     gf.GetCorrespondence(&M, &Madd)             # <<<<<<<<<<<<<<
@@ -3009,7 +3025,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_gf->GetCorrespondence((&__pyx_v_M), (&__pyx_v_Madd));
 
-  /* "spigot_src/sparsemap.pyx":75
+  /* "spigot/sparsemap.pyx":75
  *     gf.GetCorrespondence(&M, &Madd)
  * 
  *     n_active = active_set_c.size()             # <<<<<<<<<<<<<<
@@ -3018,7 +3034,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_n_active = __pyx_v_active_set_c.size();
 
-  /* "spigot_src/sparsemap.pyx":76
+  /* "spigot/sparsemap.pyx":76
  * 
  *     n_active = active_set_c.size()
  *     n_add = post_additionals.size()             # <<<<<<<<<<<<<<
@@ -3027,79 +3043,79 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   __pyx_v_n_add = __pyx_v_post_additionals.size();
 
-  /* "spigot_src/sparsemap.pyx":78
+  /* "spigot/sparsemap.pyx":78
  *     n_add = post_additionals.size()
  * 
  *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)             # <<<<<<<<<<<<<<
  *     post_additionals_np = asfloatvec(post_additionals.data(), n_add)
  *     distribution_np = asfloatvec(distribution.data(), n_active)
  */
-  __pyx_t_4 = __pyx_f_10spigot_src_9sparsemap_asfloatvec(__pyx_v_post_unaries.data(), __pyx_v_n_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_t_4 = __pyx_f_6spigot_9sparsemap_asfloatvec(__pyx_v_post_unaries.data(), __pyx_v_n_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_post_unaries_np = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "spigot_src/sparsemap.pyx":79
+  /* "spigot/sparsemap.pyx":79
  * 
  *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)
  *     post_additionals_np = asfloatvec(post_additionals.data(), n_add)             # <<<<<<<<<<<<<<
  *     distribution_np = asfloatvec(distribution.data(), n_active)
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)
  */
-  __pyx_t_4 = __pyx_f_10spigot_src_9sparsemap_asfloatvec(__pyx_v_post_additionals.data(), __pyx_v_n_add); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_4 = __pyx_f_6spigot_9sparsemap_asfloatvec(__pyx_v_post_additionals.data(), __pyx_v_n_add); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_post_additionals_np = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "spigot_src/sparsemap.pyx":80
+  /* "spigot/sparsemap.pyx":80
  *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)
  *     post_additionals_np = asfloatvec(post_additionals.data(), n_add)
  *     distribution_np = asfloatvec(distribution.data(), n_active)             # <<<<<<<<<<<<<<
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)
  *     M_np = asfloatarray(M.data(), n_active, n_var)
  */
-  __pyx_t_4 = __pyx_f_10spigot_src_9sparsemap_asfloatvec(__pyx_v_distribution.data(), __pyx_v_n_active); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_4 = __pyx_f_6spigot_9sparsemap_asfloatvec(__pyx_v_distribution.data(), __pyx_v_n_active); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_distribution_np = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "spigot_src/sparsemap.pyx":81
+  /* "spigot/sparsemap.pyx":81
  *     post_additionals_np = asfloatvec(post_additionals.data(), n_add)
  *     distribution_np = asfloatvec(distribution.data(), n_active)
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)             # <<<<<<<<<<<<<<
  *     M_np = asfloatarray(M.data(), n_active, n_var)
  *     Madd_np = asfloatarray(Madd.data(), n_active, n_add)
  */
-  __pyx_t_4 = __pyx_f_10spigot_src_9sparsemap_asfloatarray(__pyx_v_inverse_A.data(), (1 + __pyx_v_n_active), (1 + __pyx_v_n_active)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_4 = __pyx_f_6spigot_9sparsemap_asfloatarray(__pyx_v_inverse_A.data(), (1 + __pyx_v_n_active), (1 + __pyx_v_n_active)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_invA_np = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "spigot_src/sparsemap.pyx":82
+  /* "spigot/sparsemap.pyx":82
  *     distribution_np = asfloatvec(distribution.data(), n_active)
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)
  *     M_np = asfloatarray(M.data(), n_active, n_var)             # <<<<<<<<<<<<<<
  *     Madd_np = asfloatarray(Madd.data(), n_active, n_add)
  * 
  */
-  __pyx_t_4 = __pyx_f_10spigot_src_9sparsemap_asfloatarray(__pyx_v_M.data(), __pyx_v_n_active, __pyx_v_n_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __pyx_t_4 = __pyx_f_6spigot_9sparsemap_asfloatarray(__pyx_v_M.data(), __pyx_v_n_active, __pyx_v_n_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_M_np = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "spigot_src/sparsemap.pyx":83
+  /* "spigot/sparsemap.pyx":83
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)
  *     M_np = asfloatarray(M.data(), n_active, n_var)
  *     Madd_np = asfloatarray(Madd.data(), n_active, n_add)             # <<<<<<<<<<<<<<
  * 
  *     active_set_py = [f._cast_configuration(x) for x in active_set_c]
  */
-  __pyx_t_4 = __pyx_f_10spigot_src_9sparsemap_asfloatarray(__pyx_v_Madd.data(), __pyx_v_n_active, __pyx_v_n_add); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_4 = __pyx_f_6spigot_9sparsemap_asfloatarray(__pyx_v_Madd.data(), __pyx_v_n_active, __pyx_v_n_add); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_Madd_np = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "spigot_src/sparsemap.pyx":85
+  /* "spigot/sparsemap.pyx":85
  *     Madd_np = asfloatarray(Madd.data(), n_active, n_add)
  * 
  *     active_set_py = [f._cast_configuration(x) for x in active_set_c]             # <<<<<<<<<<<<<<
@@ -3124,7 +3140,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
   __pyx_v_active_set_py = ((PyObject*)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "spigot_src/sparsemap.pyx":88
+  /* "spigot/sparsemap.pyx":88
  * 
  *     solver_data = {
  *         'active_set': active_set_py,             # <<<<<<<<<<<<<<
@@ -3135,7 +3151,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
   __Pyx_GOTREF(__pyx_t_4);
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_u_active_set, __pyx_v_active_set_py) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
 
-  /* "spigot_src/sparsemap.pyx":89
+  /* "spigot/sparsemap.pyx":89
  *     solver_data = {
  *         'active_set': active_set_py,
  *         'distribution': distribution_np,             # <<<<<<<<<<<<<<
@@ -3144,7 +3160,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_u_distribution, __pyx_v_distribution_np) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
 
-  /* "spigot_src/sparsemap.pyx":90
+  /* "spigot/sparsemap.pyx":90
  *         'active_set': active_set_py,
  *         'distribution': distribution_np,
  *         'inverse_A': invA_np,             # <<<<<<<<<<<<<<
@@ -3153,7 +3169,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_u_inverse_A, __pyx_v_invA_np) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
 
-  /* "spigot_src/sparsemap.pyx":91
+  /* "spigot/sparsemap.pyx":91
  *         'distribution': distribution_np,
  *         'inverse_A': invA_np,
  *         'M': M_np,             # <<<<<<<<<<<<<<
@@ -3162,7 +3178,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
  */
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_u_M, __pyx_v_M_np) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
 
-  /* "spigot_src/sparsemap.pyx":92
+  /* "spigot/sparsemap.pyx":92
  *         'inverse_A': invA_np,
  *         'M': M_np,
  *         'Madd': Madd_np             # <<<<<<<<<<<<<<
@@ -3173,10 +3189,12 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
   __pyx_v_solver_data = ((PyObject*)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "spigot_src/sparsemap.pyx":95
+  /* "spigot/sparsemap.pyx":95
  *     }
  * 
  *     return post_unaries_np, post_additionals_np, solver_data             # <<<<<<<<<<<<<<
+ * 
+ * cpdef spigot(PGenericFactor f,
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_4 = PyTuple_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 95, __pyx_L1_error)
@@ -3194,7 +3212,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "spigot_src/sparsemap.pyx":33
+  /* "spigot/sparsemap.pyx":33
  * 
  * 
  * cpdef sparsemap(PGenericFactor f,             # <<<<<<<<<<<<<<
@@ -3206,7 +3224,7 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("spigot_src.sparsemap.sparsemap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("spigot.sparsemap.sparsemap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_post_unaries_np);
@@ -3223,8 +3241,8 @@ static PyObject *__pyx_f_10spigot_src_9sparsemap_sparsemap(struct __pyx_obj_3ad3
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10spigot_src_9sparsemap_1sparsemap(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_10spigot_src_9sparsemap_1sparsemap(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6spigot_9sparsemap_1sparsemap(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6spigot_9sparsemap_1sparsemap(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f = 0;
   std::vector<double>  __pyx_v_unaries;
   std::vector<double>  __pyx_v_additionals;
@@ -3317,12 +3335,12 @@ static PyObject *__pyx_pw_10spigot_src_9sparsemap_1sparsemap(PyObject *__pyx_sel
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("sparsemap", 0, 3, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 33, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("spigot_src.sparsemap.sparsemap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("spigot.sparsemap.sparsemap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_f), __pyx_ptype_3ad3_4base_PGenericFactor, 1, "f", 0))) __PYX_ERR(0, 33, __pyx_L1_error)
-  __pyx_r = __pyx_pf_10spigot_src_9sparsemap_sparsemap(__pyx_self, __pyx_v_f, __pyx_v_unaries, __pyx_v_additionals, __pyx_v_max_iter, __pyx_v_verbose);
+  __pyx_r = __pyx_pf_6spigot_9sparsemap_sparsemap(__pyx_self, __pyx_v_f, __pyx_v_unaries, __pyx_v_additionals, __pyx_v_max_iter, __pyx_v_verbose);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3333,17 +3351,17 @@ static PyObject *__pyx_pw_10spigot_src_9sparsemap_1sparsemap(PyObject *__pyx_sel
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10spigot_src_9sparsemap_sparsemap(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, int __pyx_v_max_iter, int __pyx_v_verbose) {
+static PyObject *__pyx_pf_6spigot_9sparsemap_sparsemap(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, int __pyx_v_max_iter, int __pyx_v_verbose) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_10spigot_src_9sparsemap_sparsemap __pyx_t_2;
+  struct __pyx_opt_args_6spigot_9sparsemap_sparsemap __pyx_t_2;
   __Pyx_RefNannySetupContext("sparsemap", 0);
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 2;
   __pyx_t_2.max_iter = __pyx_v_max_iter;
   __pyx_t_2.verbose = __pyx_v_verbose;
-  __pyx_t_1 = __pyx_f_10spigot_src_9sparsemap_sparsemap(__pyx_v_f, __pyx_v_unaries, __pyx_v_additionals, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_6spigot_9sparsemap_sparsemap(__pyx_v_f, __pyx_v_unaries, __pyx_v_additionals, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3352,7 +3370,331 @@ static PyObject *__pyx_pf_10spigot_src_9sparsemap_sparsemap(CYTHON_UNUSED PyObje
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("spigot_src.sparsemap.sparsemap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("spigot.sparsemap.sparsemap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "spigot/sparsemap.pyx":97
+ *     return post_unaries_np, post_additionals_np, solver_data
+ * 
+ * cpdef spigot(PGenericFactor f,             # <<<<<<<<<<<<<<
+ *                 vector[double] unaries,
+ *                 vector[double] additionals,
+ */
+
+static PyObject *__pyx_pw_6spigot_9sparsemap_3spigot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_f_6spigot_9sparsemap_spigot(struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_6spigot_9sparsemap_spigot *__pyx_optional_args) {
+  int __pyx_v_max_iter = ((int)10);
+  int __pyx_v_verbose = ((int)0);
+  int __pyx_v_i;
+  int __pyx_v_n_var;
+  std::vector<AD3::BinaryVariable *>  __pyx_v_variables;
+  std::vector<double>  __pyx_v_post_unaries;
+  std::vector<double>  __pyx_v_post_additionals;
+  AD3::GenericFactor *__pyx_v_gf;
+  AD3::FactorGraph __pyx_v_fg;
+  PyObject *__pyx_v_post_unaries_np = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  int __pyx_t_2;
+  int __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("spigot", 0);
+  if (__pyx_optional_args) {
+    if (__pyx_optional_args->__pyx_n > 0) {
+      __pyx_v_max_iter = __pyx_optional_args->max_iter;
+      if (__pyx_optional_args->__pyx_n > 1) {
+        __pyx_v_verbose = __pyx_optional_args->verbose;
+      }
+    }
+  }
+
+  /* "spigot/sparsemap.pyx":117
+ *         GenericFactor* gf
+ * 
+ *     n_var = unaries.size()             # <<<<<<<<<<<<<<
+ * 
+ *     cdef FactorGraph fg
+ */
+  __pyx_v_n_var = __pyx_v_unaries.size();
+
+  /* "spigot/sparsemap.pyx":120
+ * 
+ *     cdef FactorGraph fg
+ *     fg.SetVerbosity(verbose)             # <<<<<<<<<<<<<<
+ * 
+ *     variables.resize(n_var)
+ */
+  __pyx_v_fg.SetVerbosity(__pyx_v_verbose);
+
+  /* "spigot/sparsemap.pyx":122
+ *     fg.SetVerbosity(verbose)
+ * 
+ *     variables.resize(n_var)             # <<<<<<<<<<<<<<
+ *     for i in range(n_var):
+ *         variables[i] = fg.CreateBinaryVariable();
+ */
+  try {
+    __pyx_v_variables.resize(__pyx_v_n_var);
+  } catch(...) {
+    __Pyx_CppExn2PyErr();
+    __PYX_ERR(0, 122, __pyx_L1_error)
+  }
+
+  /* "spigot/sparsemap.pyx":123
+ * 
+ *     variables.resize(n_var)
+ *     for i in range(n_var):             # <<<<<<<<<<<<<<
+ *         variables[i] = fg.CreateBinaryVariable();
+ * 
+ */
+  __pyx_t_1 = __pyx_v_n_var;
+  __pyx_t_2 = __pyx_t_1;
+  for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
+    __pyx_v_i = __pyx_t_3;
+
+    /* "spigot/sparsemap.pyx":124
+ *     variables.resize(n_var)
+ *     for i in range(n_var):
+ *         variables[i] = fg.CreateBinaryVariable();             # <<<<<<<<<<<<<<
+ * 
+ *     fg.DeclareFactor(<Factor*> f.thisptr, variables, False)
+ */
+    (__pyx_v_variables[__pyx_v_i]) = __pyx_v_fg.CreateBinaryVariable();
+  }
+
+  /* "spigot/sparsemap.pyx":126
+ *         variables[i] = fg.CreateBinaryVariable();
+ * 
+ *     fg.DeclareFactor(<Factor*> f.thisptr, variables, False)             # <<<<<<<<<<<<<<
+ * 
+ *     gf = <GenericFactor*?> f.thisptr
+ */
+  __pyx_v_fg.DeclareFactor(((AD3::Factor *)__pyx_v_f->__pyx_base.thisptr), __pyx_v_variables, 0);
+
+  /* "spigot/sparsemap.pyx":128
+ *     fg.DeclareFactor(<Factor*> f.thisptr, variables, False)
+ * 
+ *     gf = <GenericFactor*?> f.thisptr             # <<<<<<<<<<<<<<
+ *     gf.SetQPMaxIter(max_iter)
+ *     gf.SetClearCache(False)  # because we need the cache
+ */
+  __pyx_v_gf = ((AD3::GenericFactor *)__pyx_v_f->__pyx_base.thisptr);
+
+  /* "spigot/sparsemap.pyx":129
+ * 
+ *     gf = <GenericFactor*?> f.thisptr
+ *     gf.SetQPMaxIter(max_iter)             # <<<<<<<<<<<<<<
+ *     gf.SetClearCache(False)  # because we need the cache
+ *     f.thisptr.SetAdditionalLogPotentials(additionals)
+ */
+  __pyx_v_gf->SetQPMaxIter(__pyx_v_max_iter);
+
+  /* "spigot/sparsemap.pyx":130
+ *     gf = <GenericFactor*?> f.thisptr
+ *     gf.SetQPMaxIter(max_iter)
+ *     gf.SetClearCache(False)  # because we need the cache             # <<<<<<<<<<<<<<
+ *     f.thisptr.SetAdditionalLogPotentials(additionals)
+ *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)
+ */
+  __pyx_v_gf->SetClearCache(0);
+
+  /* "spigot/sparsemap.pyx":131
+ *     gf.SetQPMaxIter(max_iter)
+ *     gf.SetClearCache(False)  # because we need the cache
+ *     f.thisptr.SetAdditionalLogPotentials(additionals)             # <<<<<<<<<<<<<<
+ *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)
+ * 
+ */
+  __pyx_v_f->__pyx_base.thisptr->SetAdditionalLogPotentials(__pyx_v_additionals);
+
+  /* "spigot/sparsemap.pyx":132
+ *     gf.SetClearCache(False)  # because we need the cache
+ *     f.thisptr.SetAdditionalLogPotentials(additionals)
+ *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)             # <<<<<<<<<<<<<<
+ * 
+ *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)
+ */
+  __pyx_v_f->__pyx_base.thisptr->SolveQP(__pyx_v_unaries, __pyx_v_additionals, (&__pyx_v_post_unaries), (&__pyx_v_post_additionals));
+
+  /* "spigot/sparsemap.pyx":134
+ *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)
+ * 
+ *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)             # <<<<<<<<<<<<<<
+ * 
+ *     return post_unaries_np
+ */
+  __pyx_t_4 = __pyx_f_6spigot_9sparsemap_asfloatvec(__pyx_v_post_unaries.data(), __pyx_v_n_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_v_post_unaries_np = __pyx_t_4;
+  __pyx_t_4 = 0;
+
+  /* "spigot/sparsemap.pyx":136
+ *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)
+ * 
+ *     return post_unaries_np             # <<<<<<<<<<<<<<
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_post_unaries_np);
+  __pyx_r = __pyx_v_post_unaries_np;
+  goto __pyx_L0;
+
+  /* "spigot/sparsemap.pyx":97
+ *     return post_unaries_np, post_additionals_np, solver_data
+ * 
+ * cpdef spigot(PGenericFactor f,             # <<<<<<<<<<<<<<
+ *                 vector[double] unaries,
+ *                 vector[double] additionals,
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("spigot.sparsemap.spigot", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_post_unaries_np);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6spigot_9sparsemap_3spigot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6spigot_9sparsemap_3spigot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f = 0;
+  std::vector<double>  __pyx_v_unaries;
+  std::vector<double>  __pyx_v_additionals;
+  int __pyx_v_max_iter;
+  int __pyx_v_verbose;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("spigot (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_f,&__pyx_n_s_unaries,&__pyx_n_s_additionals,&__pyx_n_s_max_iter,&__pyx_n_s_verbose,0};
+    PyObject* values[5] = {0,0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_f)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_unaries)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("spigot", 0, 3, 5, 1); __PYX_ERR(0, 97, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_additionals)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("spigot", 0, 3, 5, 2); __PYX_ERR(0, 97, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_max_iter);
+          if (value) { values[3] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  4:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_verbose);
+          if (value) { values[4] = value; kw_args--; }
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "spigot") < 0)) __PYX_ERR(0, 97, __pyx_L3_error)
+      }
+    } else {
+      switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+    }
+    __pyx_v_f = ((struct __pyx_obj_3ad3_4base_PGenericFactor *)values[0]);
+    __pyx_v_unaries = __pyx_convert_vector_from_py_double(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 98, __pyx_L3_error)
+    __pyx_v_additionals = __pyx_convert_vector_from_py_double(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L3_error)
+    if (values[3]) {
+      __pyx_v_max_iter = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_max_iter == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L3_error)
+    } else {
+      __pyx_v_max_iter = ((int)10);
+    }
+    if (values[4]) {
+      __pyx_v_verbose = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_verbose == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L3_error)
+    } else {
+      __pyx_v_verbose = ((int)0);
+    }
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("spigot", 0, 3, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 97, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("spigot.sparsemap.spigot", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_f), __pyx_ptype_3ad3_4base_PGenericFactor, 1, "f", 0))) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6spigot_9sparsemap_2spigot(__pyx_self, __pyx_v_f, __pyx_v_unaries, __pyx_v_additionals, __pyx_v_max_iter, __pyx_v_verbose);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6spigot_9sparsemap_2spigot(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, int __pyx_v_max_iter, int __pyx_v_verbose) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  struct __pyx_opt_args_6spigot_9sparsemap_spigot __pyx_t_2;
+  __Pyx_RefNannySetupContext("spigot", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_2.__pyx_n = 2;
+  __pyx_t_2.max_iter = __pyx_v_max_iter;
+  __pyx_t_2.verbose = __pyx_v_verbose;
+  __pyx_t_1 = __pyx_f_6spigot_9sparsemap_spigot(__pyx_v_f, __pyx_v_unaries, __pyx_v_additionals, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("spigot.sparsemap.spigot", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -18793,7 +19135,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "spigot_src.sparsemap.array", /*tp_name*/
+  "spigot.sparsemap.array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -18901,7 +19243,7 @@ static PyMethodDef __pyx_methods_Enum[] = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "spigot_src.sparsemap.Enum", /*tp_name*/
+  "spigot.sparsemap.Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -19151,7 +19493,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "spigot_src.sparsemap.memoryview", /*tp_name*/
+  "spigot.sparsemap.memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -19278,7 +19620,7 @@ static struct PyGetSetDef __pyx_getsets__memoryviewslice[] = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "spigot_src.sparsemap._memoryviewslice", /*tp_name*/
+  "spigot.sparsemap._memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -19343,7 +19685,8 @@ static PyTypeObject __pyx_type___pyx_memoryviewslice = {
 };
 
 static PyMethodDef __pyx_methods[] = {
-  {"sparsemap", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10spigot_src_9sparsemap_1sparsemap, METH_VARARGS|METH_KEYWORDS, 0},
+  {"sparsemap", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6spigot_9sparsemap_1sparsemap, METH_VARARGS|METH_KEYWORDS, 0},
+  {"spigot", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6spigot_9sparsemap_3spigot, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -20199,14 +20542,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_spigot_src__sparsemap) {
+  if (__pyx_module_is_main_spigot__sparsemap) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name_2, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "spigot_src.sparsemap")) {
-      if (unlikely(PyDict_SetItemString(modules, "spigot_src.sparsemap", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "spigot.sparsemap")) {
+      if (unlikely(PyDict_SetItemString(modules, "spigot.sparsemap", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -20227,7 +20570,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "spigot_src/sparsemap.pyx":9
+  /* "spigot/sparsemap.pyx":9
  * from ad3.base cimport FactorGraph, BinaryVariable, Factor
  * 
  * import numpy as np             # <<<<<<<<<<<<<<
@@ -20239,7 +20582,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "spigot_src/sparsemap.pyx":11
+  /* "spigot/sparsemap.pyx":11
  * import numpy as np
  * cimport numpy as np
  * np.import_array()             # <<<<<<<<<<<<<<
@@ -20248,7 +20591,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = __pyx_f_5numpy_import_array(); if (unlikely(__pyx_t_2 == ((int)-1))) __PYX_ERR(0, 11, __pyx_L1_error)
 
-  /* "spigot_src/sparsemap.pyx":1
+  /* "spigot/sparsemap.pyx":1
  * from libcpp.vector cimport vector             # <<<<<<<<<<<<<<
  * 
  * from cython.view cimport array as cvarray
@@ -20418,11 +20761,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init spigot_src.sparsemap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init spigot.sparsemap", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init spigot_src.sparsemap");
+    PyErr_SetString(PyExc_ImportError, "init spigot.sparsemap");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

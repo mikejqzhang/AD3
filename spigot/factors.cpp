@@ -3,21 +3,30 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "depends": [],
+        "depends": [
+            "/data/mjqzhang/AD3/spigot/FactorTreeFast.h",
+            "ad3/Factor.h",
+            "ad3/FactorGraph.h",
+            "ad3/GenericFactor.h",
+            "ad3/MultiVariable.h"
+        ],
         "include_dirs": [
-            "",
+            "spigot",
+            "/data/mjqzhang/AD3",
+            "/data/mjqzhang/AD3/python",
             "/home/mjqzhang/miniconda3/envs/mapotofu/lib/python3.7/site-packages/numpy/core/include"
         ],
         "language": "c++",
         "library_dirs": [
-            "ad3"
+            "/data/mjqzhang/AD3/ad3"
         ],
-        "name": "spigot_src.factors",
+        "name": "spigot.factors",
         "sources": [
-            "spigot_src/factors.pyx"
+            "spigot/factors.pyx",
+            "exmples/cpp/parsing/FactorTree.cpp"
         ]
     },
-    "module_name": "spigot_src.factors"
+    "module_name": "spigot.factors"
 }
 END: Cython Metadata */
 
@@ -640,8 +649,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__spigot_src__factors
-#define __PYX_HAVE_API__spigot_src__factors
+#define __PYX_HAVE__spigot__factors
+#define __PYX_HAVE_API__spigot__factors
 /* Early includes */
 #include "ios"
 #include "new"
@@ -860,7 +869,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "spigot_src/factors.pyx",
+  "spigot/factors.pyx",
   "python/ad3/base.pxd",
 };
 
@@ -1138,12 +1147,12 @@ static PyTypeObject *__pyx_ptype_3ad3_4base_PMultiVariable = 0;
 static PyTypeObject *__pyx_ptype_3ad3_4base_PFactor = 0;
 static PyTypeObject *__pyx_ptype_3ad3_4base_PGenericFactor = 0;
 
-/* Module declarations from 'spigot_src.factors' */
-#define __Pyx_MODULE_NAME "spigot_src.factors"
-extern int __pyx_module_is_main_spigot_src__factors;
-int __pyx_module_is_main_spigot_src__factors = 0;
+/* Module declarations from 'spigot.factors' */
+#define __Pyx_MODULE_NAME "spigot.factors"
+extern int __pyx_module_is_main_spigot__factors;
+int __pyx_module_is_main_spigot__factors = 0;
 
-/* Implementation of 'spigot_src.factors' */
+/* Implementation of 'spigot.factors' */
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_test[] = "__test__";
@@ -1479,14 +1488,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_spigot_src__factors) {
+  if (__pyx_module_is_main_spigot__factors) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "spigot_src.factors")) {
-      if (unlikely(PyDict_SetItemString(modules, "spigot_src.factors", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "spigot.factors")) {
+      if (unlikely(PyDict_SetItemString(modules, "spigot.factors", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -1507,7 +1516,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "spigot_src/factors.pyx":1
+  /* "spigot/factors.pyx":1
  * from ad3.base cimport Factor, GenericFactor, PGenericFactor             # <<<<<<<<<<<<<<
  * 
  * cdef extern from "FactorTreeFast.h" namespace "sparsemap":
@@ -1524,11 +1533,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init spigot_src.factors", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init spigot.factors", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init spigot_src.factors");
+    PyErr_SetString(PyExc_ImportError, "init spigot.factors");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

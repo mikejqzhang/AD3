@@ -30,11 +30,11 @@ cdef asfloatarray(void* vec, int rows, int cols):
     return farr
 
 
-cpdef sparsemap(PGenericFactor f,
-                vector[double] unaries,
-                vector[double] additionals,
-                int max_iter=10,
-                int verbose=0):
+cpdef spigot(PGenericFactor f,
+             vector[double] unaries,
+             vector[double] additionals,
+             int max_iter=10,
+             int verbose=0):
 
     cdef:
         int i, n_active, n_var, n_add
@@ -67,29 +67,7 @@ cpdef sparsemap(PGenericFactor f,
     f.thisptr.SetAdditionalLogPotentials(additionals)
     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)
 
-    active_set_c = gf.GetQPActiveSet()
-    distribution = gf.GetQPDistribution()
-    inverse_A = gf.GetQPInvA()
-    gf.GetCorrespondence(&M, &Madd)
-
-    n_active = active_set_c.size()
-    n_add = post_additionals.size()
-
     post_unaries_np = asfloatvec(post_unaries.data(), n_var)
-    post_additionals_np = asfloatvec(post_additionals.data(), n_add)
-    distribution_np = asfloatvec(distribution.data(), n_active)
-    invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)
-    M_np = asfloatarray(M.data(), n_active, n_var)
-    Madd_np = asfloatarray(Madd.data(), n_active, n_add)
 
-    active_set_py = [f._cast_configuration(x) for x in active_set_c]
+    return post_unaries_np
 
-    solver_data = {
-        'active_set': active_set_py,
-        'distribution': distribution_np,
-        'inverse_A': invA_np,
-        'M': M_np,
-        'Madd': Madd_np
-    }
-
-    return post_unaries_np, post_additionals_np, solver_data
